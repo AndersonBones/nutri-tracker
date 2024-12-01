@@ -23,11 +23,14 @@ export const { config,
                 gray100:"#F8F9FA",
                 gray600:"#434343",
                 gray200:"#c8cad1",
-                blue500:"#0081bc"
+                blue500:"#0081bc",
+                blueCarbs:"#75C3DA",
+                redFat:"#F58881",
+                yellowProtein:"#F9C54B"
             },
 
             fontSizes: {
-                sm: '0.80rem',
+                sm: '0.9rem',
                 md2: '1rem',
                 md: '1.125rem',
                 lg: '1.25rem',

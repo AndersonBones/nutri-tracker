@@ -2,7 +2,6 @@ import { NutriContextProvider } from "@/contexts/nutriContext";
 import { globalStyles } from "@/styles/globals";
 import type { AppProps } from "next/app";
 import { Montserrat } from "next/font/google";
-import '@coreui/coreui/dist/css/coreui.min.css'
 
 
 globalStyles()

@@ -8,18 +8,22 @@ export const NutritionFactsContainer = styled("div",{
     border:"1px solid $gray200",
     fontWeight:600,
     padding:"1rem",
-    borderRadius:".3rem"
+    borderRadius:".3rem",
+
+    gap:"1rem"
  
 })
 
 export const NutritionTitle = styled("div",{
-    padding:"1rem",
+    
     h2:{
         textAlign:"center"
     }
 })  
 
 export const NutritionServing = styled("div",{
+    backgroundColor:"$gray100",
+    padding:".3rem 0",
     display:"flex",
     justifyContent:"space-between"
 })

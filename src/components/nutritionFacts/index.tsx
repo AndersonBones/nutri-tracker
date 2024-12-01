@@ -1,25 +1,58 @@
-import { CTable, CTableHead, CTableRow, CTableHeaderCell, CTableBody, CTableDataCell } from "@coreui/react"
+import { useContext } from "react"
 import { NutritionFactsContainer, NutritionFactsTable, NutritionBody, NutritionRowTotal, NutritionRowSubtotal, NutritionDataSubtotal, NutritionLabelTotal, NutritionDataTotal, NutritionLabelSubtotal, NutritionTitle, NutritionServing, NutritionCalories, NutritionRowSubtotalData, NutritionRowTotalHeader } from "./styles"
+import { NutriContext } from "@/contexts/nutriContext"
+
 
 
 
 const NutritionFacts = () =>{
 
+    
+    const {serving:{
+        calcium,
+        calories,
+        carbohydrate,
+        cholasterol,
+        fat,
+        fiber,
+        iron,
+        measurement_description,
+        metric_serving_amount,
+        metric_serving_unit,
+        monounsaturated_fat,
+        number_of_units,
+        polyunsaturated_fat,
+        potassium,
+        protein,
+        saturated_fat,
+        serving_description,
+        serving_id,
+        serving_url,
+        sodium,
+        sugar,
+        vitamin_a,
+        vitamin_c
+    }} = useContext(NutriContext)
+    
+   
+
+
+
     return (
         
         <NutritionFactsContainer>
             <NutritionTitle>
-                <h2><strong>Tabela nutricional</strong></h2>
+                <h2><strong>Nutrition Facts</strong></h2>
             </NutritionTitle>
 
             <NutritionServing>
                 <span>Serving Size</span>
-                <strong>1 grande</strong>
+                <strong>{serving_description}</strong>
             </NutritionServing>
 
             <NutritionCalories>
-                <span>Calorias</span>
-                <strong>77</strong>
+                <span>Calories</span>
+                <strong>{calories}</strong>
             </NutritionCalories>
             
 
@@ -32,7 +65,7 @@ const NutritionFacts = () =>{
                     <NutritionRowTotal>
                         <NutritionRowTotalHeader>
                             
-                            <NutritionLabelTotal>Total Fat 5.28g</NutritionLabelTotal>
+                            <NutritionLabelTotal>Total Fat {fat}g</NutritionLabelTotal>
                             <NutritionDataTotal>7%</NutritionDataTotal>
                             
                         </NutritionRowTotalHeader>
@@ -40,22 +73,22 @@ const NutritionFacts = () =>{
                         <NutritionRowSubtotal>
 
                             <NutritionRowSubtotalData>
-                                <NutritionLabelSubtotal>Saturated Fat 1.627 g</NutritionLabelSubtotal>
+                                <NutritionLabelSubtotal>Saturated Fat {saturated_fat}g</NutritionLabelSubtotal>
                                 <NutritionDataSubtotal>8%</NutritionDataSubtotal>
                             </NutritionRowSubtotalData>
 
                             <NutritionRowSubtotalData>
-                                <NutritionLabelSubtotal>Trans Fat</NutritionLabelSubtotal>
+                                <NutritionLabelSubtotal>Trans Fat </NutritionLabelSubtotal>
                                 <NutritionDataSubtotal></NutritionDataSubtotal>
                             </NutritionRowSubtotalData>
 
                             <NutritionRowSubtotalData>
-                                <NutritionLabelSubtotal>Polyunsaturated Fat 0.704g</NutritionLabelSubtotal>
+                                <NutritionLabelSubtotal>Polyunsaturated Fat {polyunsaturated_fat}g</NutritionLabelSubtotal>
                                 <NutritionDataSubtotal></NutritionDataSubtotal>
                             </NutritionRowSubtotalData>
 
                             <NutritionRowSubtotalData>
-                                <NutritionLabelSubtotal>Monounsaturated Fat 2.030g</NutritionLabelSubtotal>
+                                <NutritionLabelSubtotal>Monounsaturated Fat {monounsaturated_fat}g</NutritionLabelSubtotal>
                                 <NutritionDataSubtotal></NutritionDataSubtotal>
                             </NutritionRowSubtotalData>
                            
@@ -68,7 +101,7 @@ const NutritionFacts = () =>{
                     <NutritionRowTotal>
                         <NutritionRowTotalHeader>
 
-                            <NutritionLabelTotal>Cholesterol 211mg</NutritionLabelTotal>
+                            <NutritionLabelTotal>Cholesterol {cholasterol} mg</NutritionLabelTotal>
                             <NutritionDataTotal>70%</NutritionDataTotal>
                             
                         </NutritionRowTotalHeader>
@@ -78,7 +111,7 @@ const NutritionFacts = () =>{
                     <NutritionRowTotal>
                         <NutritionRowTotalHeader>
 
-                            <NutritionLabelTotal>Sodium 139 mg</NutritionLabelTotal>
+                            <NutritionLabelTotal>Sodium {sodium} mg</NutritionLabelTotal>
                             <NutritionDataTotal>6%</NutritionDataTotal>
                             
                         </NutritionRowTotalHeader>
@@ -88,7 +121,7 @@ const NutritionFacts = () =>{
                     <NutritionRowTotal>
                         <NutritionRowTotalHeader>
 
-                            <NutritionLabelTotal>Total Carbohydrate 0.56g</NutritionLabelTotal>
+                            <NutritionLabelTotal>Total Carbohydrate {carbohydrate}g</NutritionLabelTotal>
                             <NutritionDataTotal>0%</NutritionDataTotal>
                             
                         </NutritionRowTotalHeader>
@@ -96,13 +129,13 @@ const NutritionFacts = () =>{
                         <NutritionRowSubtotal>
                             <NutritionRowSubtotalData>
 
-                                <NutritionLabelSubtotal>Dietary Fiber 0g</NutritionLabelSubtotal>
+                                <NutritionLabelSubtotal>Dietary Fiber {fiber}g</NutritionLabelSubtotal>
                                 <NutritionDataSubtotal>0%</NutritionDataSubtotal>
                             
                             </NutritionRowSubtotalData>
 
                             <NutritionRowSubtotalData>
-                                <NutritionLabelSubtotal>Sugars 0.56g</NutritionLabelSubtotal>
+                                <NutritionLabelSubtotal>Sugars {sugar}g</NutritionLabelSubtotal>
                                 <NutritionDataSubtotal></NutritionDataSubtotal>
                             </NutritionRowSubtotalData>
                             
@@ -114,7 +147,7 @@ const NutritionFacts = () =>{
 
                     <NutritionRowTotal>
                         <NutritionRowTotalHeader>
-                            <NutritionLabelTotal>Protein 6.26g</NutritionLabelTotal>
+                            <NutritionLabelTotal>Protein {protein}g</NutritionLabelTotal>
                             <NutritionDataTotal></NutritionDataTotal>
                         </NutritionRowTotalHeader>
 
@@ -129,7 +162,7 @@ const NutritionFacts = () =>{
 
                             
                             <NutritionRowSubtotalData>
-                                <NutritionLabelTotal>Cholesterol 211mg</NutritionLabelTotal>
+                                <NutritionLabelTotal>Cholesterol {cholasterol} mg</NutritionLabelTotal>
                                 <NutritionDataTotal>70%</NutritionDataTotal>
                             </NutritionRowSubtotalData>
 
@@ -139,27 +172,27 @@ const NutritionFacts = () =>{
                             </NutritionRowSubtotalData>
 
                             <NutritionRowSubtotalData>
-                                <NutritionLabelSubtotal>Calcium 25 mg</NutritionLabelSubtotal>
+                                <NutritionLabelSubtotal>Calcium {calcium} mg</NutritionLabelSubtotal>
                                 <NutritionDataSubtotal>2%</NutritionDataSubtotal>
                             </NutritionRowSubtotalData>
 
                             <NutritionRowSubtotalData>
-                                <NutritionLabelSubtotal>Iron 0.60 mg</NutritionLabelSubtotal>
+                                <NutritionLabelSubtotal>Iron {iron} mg</NutritionLabelSubtotal>
                                 <NutritionDataSubtotal>3%</NutritionDataSubtotal>
                             </NutritionRowSubtotalData>
 
                             <NutritionRowSubtotalData>
-                                <NutritionLabelSubtotal>Potassium 63 mg</NutritionLabelSubtotal>
+                                <NutritionLabelSubtotal>Potassium {potassium} mg</NutritionLabelSubtotal>
                                 <NutritionDataSubtotal>1%</NutritionDataSubtotal>
                             </NutritionRowSubtotalData>
 
                             <NutritionRowSubtotalData>
-                                <NutritionLabelSubtotal>Vitamin A 84mcg</NutritionLabelSubtotal>
+                                <NutritionLabelSubtotal>Vitamin A {vitamin_a}mcg</NutritionLabelSubtotal>
                                 <NutritionDataSubtotal>9%</NutritionDataSubtotal>
                             </NutritionRowSubtotalData>
 
                             <NutritionRowSubtotalData>
-                                <NutritionLabelSubtotal>Vitamin C 0mg</NutritionLabelSubtotal>
+                                <NutritionLabelSubtotal>Vitamin C {vitamin_c} mg</NutritionLabelSubtotal>
                                 <NutritionDataSubtotal>0%</NutritionDataSubtotal>
                             </NutritionRowSubtotalData>
                             

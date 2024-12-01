@@ -16,7 +16,7 @@ export const NutriDescription = styled("div",{
     gap:"2rem",
 
     p:{
-        fontSize:"$xl"
+        fontSize:"$md"
     },
 
     span:{
@@ -25,6 +25,7 @@ export const NutriDescription = styled("div",{
     },
 
     h2:{
-        fontWeight:200
+        fontSize:"$lx",
+        fontWeight:300
     }
 })
